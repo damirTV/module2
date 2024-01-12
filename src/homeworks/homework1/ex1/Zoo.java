@@ -1,7 +1,6 @@
 package homeworks.homework1.ex1;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class Zoo {
     int animalsQTY = 3;
