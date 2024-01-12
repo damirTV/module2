@@ -1,16 +1,21 @@
 package homeworks.homework1.ex1;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Zoo {
-    ArrayList<Animal> animals = new ArrayList<>(3);
+    int animalsQTY = 3;
+    ArrayList<Animal> animals;
 
     public Zoo() {
+        this.animals = new ArrayList<>();
     }
 
     public <A> void addAnimal(A animal) {
-        if (animals.size() <= 2) {
+        if (animals.size() <= animalsQTY) {
             animals.add((Animal) animal);
+        } else {
+            System.out.println("Превышена емкость зоопарка");
         }
     }
 
