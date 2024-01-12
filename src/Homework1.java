@@ -15,8 +15,9 @@ public class Homework1 {
         zoo.addAnimal(dog);
         Bird bird = new Bird();
         zoo.addAnimal(bird);
+        Bird bird1 = new Bird();
+        zoo.addAnimal(bird1);
         try {
-            System.out.println(zoo.takeAnimal(tiger));
             System.out.println(zoo.takeAnimal(tiger));
         } catch (AnimalNotFound e) {
             System.out.println(e.getMessage());

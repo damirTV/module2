@@ -3,14 +3,15 @@ package homeworks.homework1.ex1;
 import java.util.ArrayList;
 
 public class Zoo {
-    ArrayList<Animal> animals;
+    ArrayList<Animal> animals = new ArrayList<>(3);
 
     public Zoo() {
-        this.animals = new ArrayList<>(3);
     }
 
     public <A> void addAnimal(A animal) {
-        animals.add((Animal) animal);
+        if (animals.size() <= 2) {
+            animals.add((Animal) animal);
+        }
     }
 
     public <A> Animal takeAnimal(A animal) throws AnimalNotFound {
