@@ -1,4 +1,4 @@
-package HomeworkOne.ex3;
+package homeworks.homework1.ex3;
 
 public class Item {
     private final String name;
