@@ -11,20 +11,21 @@ public class Zoo {
     }
 
     public <A> void addAnimal(A animal) {
-        if (animals.size() <= animalsQTY) {
+        if (animals.size() < animalsQTY) {
             animals.add((Animal) animal);
         } else {
             System.out.println("Превышена емкость зоопарка");
         }
     }
 
-    public <A> Animal takeAnimal(A animal) throws AnimalNotFound {
-        if (animals.contains((Animal) animal)) {
-            animals.remove(animal);
-            ((Animal) animal).makeAction();
-            return (Animal) animal;
+    public Animal takeAnimal() throws AnimalNotFound {
+        if (!animals.isEmpty()) {
+            Animal cloneAnimal = animals.get(0);
+            cloneAnimal.makeAction();
+            animals.remove(0);
+            return cloneAnimal;
         } else {
-            throw new AnimalNotFound("Ошибка: такого животного не найдено!");
+            throw new AnimalNotFound("Ошибка: в зоопарке нет животных!");
         }
     }
 }

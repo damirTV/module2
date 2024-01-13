@@ -18,7 +18,7 @@ public class Homework1 {
         Bird bird1 = new Bird();
         zoo.addAnimal(bird1);
         try {
-            System.out.println(zoo.takeAnimal(tiger));
+            System.out.println(zoo.takeAnimal());
         } catch (AnimalNotFound e) {
             System.out.println(e.getMessage());
         }
