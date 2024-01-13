@@ -21,7 +21,6 @@ public class Zoo {
     public Animal takeAnimal() throws AnimalNotFound {
         if (!animals.isEmpty()) {
             Animal cloneAnimal = animals.get(0);
-            cloneAnimal.makeAction();
             animals.remove(0);
             return cloneAnimal;
         } else {
