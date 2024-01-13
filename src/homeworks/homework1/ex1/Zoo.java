@@ -14,14 +14,32 @@ public class Zoo<T extends Animal, D extends Animal, B extends Animal> {
     }
 
     public T getTiger() {
-        return tiger;
+        if (tiger != null) {
+            T clone = tiger;
+            tiger = null;
+            return clone;
+        } else {
+            throw new RuntimeException("Ошибка: животное не найдено");
+        }
     }
 
     public D getDog() {
-        return dog;
+        if (dog != null) {
+            D clone = dog;
+            dog = null;
+            return clone;
+        } else {
+            throw new RuntimeException("Ошибка: животное не найдено");
+        }
     }
 
     public B getBird() {
-        return bird;
+        if (bird != null) {
+            B clone = bird;
+            bird = null;
+            return clone;
+        } else {
+        throw new RuntimeException("Ошибка: животное не найдено");
+        }
     }
 }
