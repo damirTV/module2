@@ -11,19 +11,11 @@ public class Homework1 {
         Tiger tiger = new Tiger();
         Dog dog = new Dog();
         Bird bird = new Bird();
-        Zoo<Tiger> zooTiger = new Zoo<>();
-        Zoo<Dog> zooDog = new Zoo<>();
-        Zoo<Bird> zooBird = new Zoo<>();
+        Zoo<Animal> zoo = new Zoo<>();
+        zoo.addAnimal(tiger);
+        Animal tiger1 = zoo.getAnimal();
+        tiger1.action();
 
-        zooTiger.addAnimal(tiger);
-        zooDog.addAnimal(dog);
-        zooBird.addAnimal(bird);
-
-        try {
-            zooTiger.takeAnimal().makeAction();
-        } catch (AnimalNotFound e) {
-            System.out.println(e.getMessage());
-        }
 
         System.out.println("\n+++Домашнее задание №2+++");
         new ListExample();

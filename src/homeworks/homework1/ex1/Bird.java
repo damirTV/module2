@@ -1,8 +1,9 @@
 package homeworks.homework1.ex1;
 
-public class Bird extends Animal {
+public class Bird implements Animal {
+
     @Override
-    public void makeAction() {
-        System.out.println("Лечу!");
+    public void action() {
+        System.out.println("Лечу!!!");
     }
 }
