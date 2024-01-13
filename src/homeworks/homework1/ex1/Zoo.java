@@ -39,7 +39,7 @@ public class Zoo<T extends Animal, D extends Animal, B extends Animal> {
             bird = null;
             return clone;
         } else {
-        throw new RuntimeException("Ошибка: животное не найдено");
+            throw new RuntimeException("Ошибка: животное не найдено");
         }
     }
 }
