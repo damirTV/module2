@@ -1,4 +1,7 @@
 import homeworks.homework1.ex1.*;
+import homeworks.homework1.ex1.animals.Bird;
+import homeworks.homework1.ex1.animals.Dog;
+import homeworks.homework1.ex1.animals.Tiger;
 import homeworks.homework1.ex2.ListExample;
 import homeworks.homework1.ex3.Item;
 import homeworks.homework1.ex3.Storage;
@@ -11,11 +14,9 @@ public class Homework1 {
         Tiger tiger = new Tiger();
         Dog dog = new Dog();
         Bird bird = new Bird();
-        Zoo<Animal> zoo = new Zoo<>();
-        zoo.addAnimal(tiger);
-        Animal tiger1 = zoo.getAnimal();
+        Zoo<Tiger, Dog, Bird> zoo = new Zoo<>(tiger, dog, bird);
+        Tiger tiger1 = zoo.getTiger();
         tiger1.action();
-
 
         System.out.println("\n+++Домашнее задание №2+++");
         new ListExample();
