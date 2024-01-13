@@ -8,17 +8,19 @@ import java.util.List;
 public class Homework1 {
     public static void main(String[] args) {
         System.out.println("\n+++Домашнее задание №1+++");
-        Zoo zoo = new Zoo();
         Tiger tiger = new Tiger();
-        zoo.addAnimal(tiger);
         Dog dog = new Dog();
-        zoo.addAnimal(dog);
         Bird bird = new Bird();
-        zoo.addAnimal(bird);
-        Bird bird1 = new Bird();
-        zoo.addAnimal(bird1);
+        Zoo<Tiger> zooTiger = new Zoo<>();
+        Zoo<Dog> zooDog = new Zoo<>();
+        Zoo<Bird> zooBird = new Zoo<>();
+
+        zooTiger.addAnimal(tiger);
+        zooDog.addAnimal(dog);
+        zooBird.addAnimal(bird);
+
         try {
-            zoo.takeAnimal().makeAction();
+            zooTiger.takeAnimal().makeAction();
         } catch (AnimalNotFound e) {
             System.out.println(e.getMessage());
         }
