@@ -1,6 +1,6 @@
 package homeworks.homework1.ex1.animals;
 
-public class Bird implements Animal {
+public class Bird extends Animal {
 
     @Override
     public void action() {

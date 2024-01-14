@@ -1,5 +1,5 @@
 package homeworks.homework1.ex1.animals;
 
-public interface Animal {
-    void action();
+public abstract class Animal {
+    public abstract void action();
 }
