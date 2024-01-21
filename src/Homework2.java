@@ -1,7 +1,6 @@
 import homeworks.homework2.ex1.LuggageSpace;
 import homeworks.homework2.ex2.Item;
 import homeworks.homework2.ex3.Detail;
-
 import java.util.HashMap;
 import java.util.Map;
 
@@ -72,6 +71,8 @@ public class Homework2 {
         details.put(detail1, 1);
         details.put(detail2, 2);
         details.put(detail3, 3);
-        System.out.println(details.get(detail1));
+        for (Detail detail : details.keySet()) {
+            System.out.println(detail.getName() + "=" + details.get(detail));
+        }
     }
 }
