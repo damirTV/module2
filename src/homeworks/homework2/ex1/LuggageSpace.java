@@ -1,12 +1,12 @@
 package homeworks.homework2.ex1;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Set;
 
 public class LuggageSpace {
-    List<Suitcase> suitcaseList = new ArrayList<>();
+    Queue<Suitcase> suitcases = new LinkedList<>();
     Set<Worker> workers = new HashSet<>();
 
     public LuggageSpace() {
@@ -16,14 +16,16 @@ public class LuggageSpace {
     }
 
     public void newPlane(String flightNumber) {
-        for (int i = 0; i <= 20; i++) {
-            suitcaseList.add(new Suitcase(flightNumber));
+        for (int i = 0; i <= 19; i++) {
+            suitcases.add(new Suitcase(flightNumber));
         }
     }
 
     public void unload() {
-        for (Worker worker : workers) {
-            worker.throwSuitcase(suitcaseList);
+        while (!suitcases.isEmpty()) {
+            for (Worker worker : workers) {
+                worker.throwSuitcase(suitcases);
+            }
         }
     }
 }

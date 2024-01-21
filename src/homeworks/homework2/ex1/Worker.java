@@ -1,6 +1,6 @@
 package homeworks.homework2.ex1;
 
-import java.util.List;
+import java.util.Queue;
 
 public class Worker {
     private final String name;
@@ -9,10 +9,11 @@ public class Worker {
         this.name = name;
     }
 
-    public void throwSuitcase(List<Suitcase> suitcaseList) {
-        for (Suitcase suitcase : suitcaseList) {
-            System.out.printf("\n{%s}: Мужики, кидаю чемодан {%s}",
-                    name, suitcase.getFlightNumber());
+    public void throwSuitcase(Queue<Suitcase> suitcases) {
+        if (suitcases.isEmpty()) {
+            return;
         }
+        System.out.printf("{%s}: Мужики, кидаю чемодан {%s}\n",
+                    name, suitcases.poll().getFlightNumber());
     }
 }

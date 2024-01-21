@@ -1,9 +1,9 @@
 import homeworks.homework2.ex1.LuggageSpace;
-import homeworks.homework2.ex1.Suitcase;
-import homeworks.homework2.ex1.Worker;
+import homeworks.homework2.ex2.Item;
+import homeworks.homework2.ex3.Detail;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Homework2 {
     public static void main(String[] args) {
@@ -39,15 +39,39 @@ public class Homework2 {
 
         //3. Задание: Сломай это немедленно
         //Создать класс Detail, атрибут - name
-        //Переопределить у Item equals и hashcode так, чтобы при попадании в Hashmap в качестве ключа
+        //Переопределить у Detail equals и hashcode так, чтобы при попадании в Hashmap в качестве ключа
         //деталь всегда перетирала имеющуюся там деталь.
         // Т.е. если положить Hashmap 3 детали в качестве ключа (число значение):
         // detail(Пила) - 1, detail(Молоток) - 2, detail(отвертка) - 3
-        //При попытке печати map на экран: там будет последняя вставленная деталь ( detail(отвертка) )
+        //При попытке печати map на экран: там будет последнее вставленное значение у первой детали
+        //деталь ( detail(Пила) - 3 )
 
+        System.out.println("+++ Задание №1 +++");
         LuggageSpace luggageSpace = new LuggageSpace();
         luggageSpace.newPlane("SU-077");
         luggageSpace.newPlane("А0-222");
         luggageSpace.unload();
+        System.out.println();
+
+        System.out.println("+++ Задание №2 +++");
+        Item item1 = new Item("Яблоко");
+        Item item2 = new Item("Банан");
+        Item item3 = new Item("Апельсин");
+        Map<Item, Integer> items = new HashMap<>();
+        items.put(item1, 1);
+        items.put(item2, 2);
+        items.put(item3, 3);
+        System.out.println(items.get(item3));
+        System.out.println();
+
+        System.out.println("+++ Задание №3 +++");
+        Detail detail1 = new Detail("Пила");
+        Detail detail2 = new Detail("Молоток");
+        Detail detail3 = new Detail("Отвертка");
+        Map<Detail, Integer> details = new HashMap<>();
+        details.put(detail1, 1);
+        details.put(detail2, 2);
+        details.put(detail3, 3);
+        System.out.println(details.get(detail1));
     }
 }
