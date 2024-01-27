@@ -3,6 +3,14 @@ import homeworks.homework3.ex2.Apple;
 import homeworks.homework3.ex2.Apricot;
 import homeworks.homework3.ex2.Fruit;
 import homeworks.homework3.ex2.Garden;
+import homeworks.homework3.ex3.Human;
+import homeworks.homework3.ex3.Witching;
+import homeworks.homework3.ex4.Burning;
+import homeworks.homework3.ex4.Uranium;
+import homeworks.homework3.ex4.Wood;
+import homeworks.homework3.ex5.Animal;
+import homeworks.homework3.ex5.Boat;
+import homeworks.homework3.ex5.Ruler;
 import java.util.*;
 import java.util.function.Supplier;
 
@@ -76,13 +84,13 @@ public class Homework3 {
     private static void ex2() {
         Garden<Fruit> appleFarm = Apple::new;
         Garden<Fruit> apricotFarm = Apricot::new;
-        System.out.println(appleFarm.get());
-        System.out.println(apricotFarm.get());
+        System.out.println(appleFarm.growFruit());
+        System.out.println(apricotFarm.growFruit());
     }
 
     /**
      Задание №3: Поиск пары с помощью гадания
-     Создать функциональный гадание, который на вход принимает аргумент любого типа,
+     Создать функциональный интерфейс гадание, который на вход принимает аргумент любого типа,
      на выход возвращает да/нет.
      Создать с помощью лямбд выражений:
      ромашку: принимает имя, возвращает да если в имени четное кол-во букв, нет если нечетное
@@ -90,7 +98,12 @@ public class Homework3 {
      возвращает да - если возраст + рост больше 210, нет - если меньше или равно
      */
     private static void ex3() {
-        //
+        Witching<String> chamomile = (String name) -> (name.length() % 2 == 0) ? "Да" : "Нет";
+        System.out.println(chamomile.witching("Дамир"));
+
+        Witching<Human> grandMa = (Human human) -> (human.getAge() + human.getHeight() > 210) ? "Да" : "Нет";
+        Human human1 = new Human("Вася", 300, 150);
+        System.out.println(grandMa.witching(human1));
     }
 
     /**
@@ -102,7 +115,12 @@ public class Homework3 {
      костер: принимает в себя дерево, печатает на экран: желто-красный свет вокруг!
      */
     private static void ex4() {
-
+        Uranium uranium = new Uranium();
+        Wood wood = new Wood();
+        Burning<Uranium> nuclearReactor = (Uranium material) -> System.out.println("Зеленый свет вокруг!");
+        Burning<Wood> campfire = (Wood material) -> System.out.println("Желто-красный свет вокруг!");
+        nuclearReactor.accept(uranium);
+        campfire.accept(wood);
     }
 
     /**
@@ -114,7 +132,13 @@ public class Homework3 {
      возвращает сумму длин тела и хвоста
      */
     private static void ex5() {
+        Ruler<Boat> boatMeter = Boat::getLength;
+        Boat boat = new Boat(1000);
+        System.out.println(boatMeter.accept(boat));
 
+        Ruler<Animal> animalMeter = (Animal animal) -> animal.getLengthBody() + animal.getLengthTail();
+        Animal animal = new Animal(100, 200);
+        System.out.println(animalMeter.accept(animal));
     }
 }
 
