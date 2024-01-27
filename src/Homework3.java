@@ -46,7 +46,7 @@ public class Homework3 {
             if (f2.getLikes() - f1.getLikes() == 0
                     && f2.getDateTime().compareTo(f1.getDateTime()) == 0) {
                 return -1;
-                }
+            }
             if (f2.getLikes() - f1.getLikes() == 0) {
                 return f2.getDateTime().compareTo(f1.getDateTime());
             }
