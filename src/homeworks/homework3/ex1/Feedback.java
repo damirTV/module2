@@ -3,7 +3,7 @@ package homeworks.homework3.ex1;
 import java.time.LocalDateTime;
 
 public class Feedback {
-    private int id;
+    private final int id;
     private String text;
     private Integer likes;
     private LocalDateTime dateTime;
