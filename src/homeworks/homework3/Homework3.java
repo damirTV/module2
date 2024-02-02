@@ -1,3 +1,5 @@
+package homeworks.homework3;
+
 import homeworks.homework3.ex1.Feedback;
 import homeworks.homework3.ex2.Apple;
 import homeworks.homework3.ex2.Apricot;

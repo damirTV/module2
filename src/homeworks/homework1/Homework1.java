@@ -1,3 +1,5 @@
+package homeworks.homework1;
+
 import homeworks.homework1.ex1.*;
 import homeworks.homework1.ex1.animals.Bird;
 import homeworks.homework1.ex1.animals.Dog;

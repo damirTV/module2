@@ -1,3 +1,5 @@
+package homeworks.homework2;
+
 import homeworks.homework2.ex1.LuggageSpace;
 import homeworks.homework2.ex2.Item;
 import homeworks.homework2.ex3.Detail;
