@@ -3,7 +3,9 @@ package homeworks.homework4;
 import homeworks.homework4.ex1.Car;
 
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -56,8 +58,44 @@ public class Runner {
      */
 
     private static void ex2() {
+        Set<String> text = Set.of("тонь", "тополь", "боль", "рой", "стройка");
 
+       /*
+        text.forEach(word -> word.chars()
+                .mapToObj(letter -> (char)letter)
+                .filter(x -> x.toString().equals("о"))
+                .forEach(System.out::println));
+        System.out.println("Вариант №2");
+
+        int count2 = 0;
+        for (String word : text) {
+            int counter = 0;
+            for(char ch : word.toCharArray()) {
+                if (ch == 'о') {
+                    counter++;
+                }
+            }
+            System.out.println("Слово: " + word + ". Кол-во букв О: " + counter);
+            count2 = count2 + counter;
+        }
+        System.out.println("Всего букв О: " + count2);
+*/
+        AtomicLong count = new AtomicLong(0);
+        text.forEach(word -> {
+            long counter = word.chars().filter(ch -> ch == 'о').count();
+            count.addAndGet(counter);
+        });
+        check(count);
     }
+
+    private static void check(AtomicLong count) {
+        if (count.get() > 0) {
+         System.out.println("Всего букв 'о': " + count);
+      } else {
+          throw new RuntimeException("Буква 'о' не найдена");
+      }
+    }
+
 
     /**
     //Задание №3 - Небоскребы, небоскребы, а я...
