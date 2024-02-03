@@ -117,8 +117,8 @@ public class Runner {
         System.out.println();
 
         //Вывести те небоскребы, которые выше километра
-        System.out.println(skyscrapers.stream().
-                filter(value -> value.getHeight() > 1000)
+        System.out.println(skyscrapers.stream()
+                .filter(value -> value.getHeight() > 1000)
                 .map(Skyscraper::getName)
                 .reduce((skyscraper1, skyscraper2) -> skyscraper1 + ", " + skyscraper2)
                 .orElse("Небоскреба выше километра - нет"));
