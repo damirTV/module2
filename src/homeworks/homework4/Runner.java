@@ -2,7 +2,6 @@ package homeworks.homework4;
 
 import homeworks.homework4.ex1.Car;
 import homeworks.homework4.ex3.Skyscraper;
-
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
@@ -10,7 +9,6 @@ import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 
 public class Runner {
     public static void main(String[] args) {
