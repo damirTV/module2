@@ -23,7 +23,7 @@ public class Car {
             throw new RuntimeException("Число внутри номера не может быть отрицательным");
         }
         if (number > 99) {
-            throw new RuntimeException("Число внутри номера не может быть трехзначным");
+            throw new RuntimeException("Число внутри номера должно быть двухзначным");
         }
     }
 }
