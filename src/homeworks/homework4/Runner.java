@@ -2,10 +2,8 @@ package homeworks.homework4;
 
 import homeworks.homework4.ex1.Car;
 import homeworks.homework4.ex3.Skyscraper;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Optional;
-import java.util.Set;
+
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -119,10 +117,12 @@ public class Runner {
         System.out.println();
 
         //Вывести те небоскребы, которые выше километра
-        Optional<String> list = skyscrapers.stream().filter(value -> value.getHeight() > 1000)
+        System.out.println(skyscrapers.stream().
+                filter(value -> value.getHeight() > 1000)
                 .map(Skyscraper::getName)
-                .reduce((skyscraper1, skyscraper2) -> skyscraper1 + ", " + skyscraper2);
-        System.out.println(list.orElse("Небоскреба выше километра - нет"));
+                .reduce((skyscraper1, skyscraper2) -> skyscraper1 + ", " + skyscraper2)
+                .orElse("Небоскреба выше километра - нет"));
+
     }
 }
 
