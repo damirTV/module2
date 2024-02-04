@@ -118,7 +118,6 @@ public class Runner {
                 .map(Skyscraper::getName)
                 .reduce((skyscraper1, skyscraper2) -> skyscraper1 + ", " + skyscraper2)
                 .orElse("Небоскреба выше километра - нет"));
-
     }
 }
 
