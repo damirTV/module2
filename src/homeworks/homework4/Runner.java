@@ -58,16 +58,12 @@ public class Runner {
 
     private static void ex2() {
         Set<String> text = Set.of("тонь", "тополь", "боль", "рой", "стройка");
-        text.stream()
+        System.out.println(text.stream()
                 .mapToInt(word -> (int) word.chars().filter(letter -> letter == 'о').count())
                 .reduce(Integer::sum)
-                .stream().forEach(sum -> {
-                    if (sum == 0) {
-                        throw new RuntimeException("Буква не найдена");
-                    } else {
-                        System.out.println(sum);
-                    }
-                });
+                .stream().filter(value -> value > 0)
+                .findFirst()
+                .orElseThrow(() -> new RuntimeException("Буква не найдена")));
     }
 
     /**

@@ -86,6 +86,7 @@ public class Homework3 {
     private static void ex2() {
         Garden<Fruit> appleFarm = Apple::new;
         Garden<Fruit> apricotFarm = Apricot::new;
+
         System.out.println(appleFarm.growFruit());
         System.out.println(apricotFarm.growFruit());
     }
